@@ -1,0 +1,63 @@
+Entorno Virtual: onlyflans
+version de python: 3.2.4 -> 4.2
+(patallazo de la versión en jpg o png, dentro la la carpera requerimiento1)
+
+1.- python -m venv onlyflans
+
+2.- source onlyflans/Scripts/activate
+
+3.- pip install --trusted-host=pypi.python.org --trusted-host=pypi.org --trusted-host=files.pythonhosted.org django==4.2
+
+4.- python --version
+
+
+_________________________________
+
+Instalaremos django 3.2.4 dentro del entorno virtual onlyflans, una vez instalado verificaremos que haya sido instalado exitosamente utilizando el comando pip freeze.
+Realizaremos un “pantallazo” de la versión de python mostrada en la terminal/consola y la guardaremos en un archivo jpg o png dentro de la carpeta requerimiento2.
+
+pip freeze > requirements-onlyflans.txt
+
+
+
+________________________________________
+Una vez creado el proyecto onlyflans, ingresaremos a la carpeta generada, aplicaremos las migraciones y ejecutaremos nuestro servidor utilizando los comandos correspondientes del archivo manage.py. Luego accederemos a la url disponible para tu proyecto. Una vez que podamos acceder a la web en nuestro navegador, realizaremos un “pantallazo” de ésta y lo
+guardaremos en un archivo jpg o png dentro de la
+carpeta requerimiento3.
+
+django-admin startproject onlyflans
+
+cd onlyflans/
+
+python manage.py startapp onlyflansApp
+
+
+8.- instalar aplicacion en los setting
+ir a onlyflans, luego al archivo settings.py y en istalles_apps escribir el nombre de la aplicacion "onlyflansApp",
+
+9.- ir al archivo de la aplicacion onlyflans llamado views.py, alli importamos el http
+
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("""
+        <h1>Home Page</h1>
+        <p>Bienvenido a nuestra página de inicio.</p>
+        <a href="/about/">About</a><br>
+        <a href="/contact/">Contact</a>
+    """)
+
+
+10.- Ir al archivo del proyecto(desafioguiado2) y luego ir a urls.py e importar la aplicacion desde las vistas y declarar la ruta
+
+from aplicacionWeb.views import home, about, contact
+
+urlpatterns = 
+	path('admin/', admin.site.urls),
+	path("", home),
+
+
+11.- ahora se puede ejecutar el servidor
+python manage.py runserver
+
+
